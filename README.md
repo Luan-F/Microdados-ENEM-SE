@@ -12,7 +12,7 @@ Justificativa: Esse diagrama é essencial para representar as interações entre
 
 Justificativa: O Diagrama de Classes é utilizado para representar a estrutura estática do sistema, mostrando as classes, seus atributos, métodos e os relacionamentos entre elas. Ele é fundamental para compreender a organização das entidades no sistema, facilitando a modelagem e o entendimento do domínio do problema.
 
-![Diagrama de Classes](url-diagrama-classes)
+[![Diagrama de Classes](url-diagrama-classes)](https://drive.google.com/file/d/14nsvyZMTRXuQuRz11wPsLyrazVrgXExW/view?usp=sharing)
 
 ### Diagrama de Sequência
 
@@ -30,7 +30,7 @@ Justificativa: Esse diagrama facilita a comunicação entre a equipe ao mostrar 
 
 ### Modelo Conceitual
 
-[https://drive.google.com/file/d/14fcoPz3sAHZ4ruhLuMjOZgn3qYZ0gc4H/view?usp=sharing](https://drive.google.com/file/d/14fcoPz3sAHZ4ruhLuMjOZgn3qYZ0gc4H/view?usp=sharing)
+[![Modelo Conceitual](url-conceitual)](https://drive.google.com/file/d/14fcoPz3sAHZ4ruhLuMjOZgn3qYZ0gc4H/view?usp=sharing)
 
 #### Identificação de Entidades
 
