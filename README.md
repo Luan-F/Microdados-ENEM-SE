@@ -34,65 +34,87 @@ Justificativa: Esse diagrama facilita a comunicação entre a equipe ao mostrar 
 
 #### Identificação de Entidades
 
-- Aluno; Usuario; Escolaridade; Inscricao; Escola; ProvaPorArea; Redacao
+- Participante; Usuario; Escolaridade; LocalDeAplicacao; ProvaPorArea; 
 
 #### Identificação de Atributos
 
-### Aluno
+## Participante
 - **Atributos:**
+  - NumeroInscricao: string
+  - AnoEnem: int
+  - FaixaEtaria: string
   - Sexo: string
-  - EstadoCivil: int
-  - Raca: int
-  - Nacionalidade: int
-  - FaixaEtaria: int
+  - EstadoCivil: string
+  - Raca: string
+  - Nacionalidade: string
+  - Treineiro: boolean
 
-### Usuario
-- **Atributos:**
-  - Administrador: bool
-  - Nome: string
-  - Email: string
-  - Senha: char
+## Usuario
+  - **Atributos:**
+    - IsAdministrador: bool
+    - Nome: string
+    - Email: string
+    - Senha: char
 
-### Escolaridade
+## Escolaridade
 - **Atributos:**
-  - Concluiu: bool
+  - NumeroInscricao: string
+  - SituacaoConclusao: string
   - AnoConclusao: int
+  - TipoEscola: string
+  - TipoEnsino: string
+  - CodigoEscola: string
+  - NomeMunicipio: string
+  - CodigoMunicipio: int
+  - CodigoUF: int
+  - SiglaUF: string
+  - DependenciaAdministrativa: string
+  - ZonaLocalizacao: string
+  - SitucaoFuncionamento: string
 
-### Inscricao
+## LocalDeAplicacao
 - **Atributos:**
-  - Matricula: string
-  - Treineiro: bool
+  - NumeroInscricao: string
+  - NomeMunicipio: string
+  - CodigoMunicipio: int
+  - CodigoUF: int
+  - SiglaUF: string
 
-### Escola
+## ProvaAreaConhecimento
 - **Atributos:**
-  - Nome: string
-  - UF: string
-  - Municipio: string
+  - NumeroInscricao: string
+  - PresencaCN: boolean
+  - PresencaCH: boolean
+  - PresencaLC: boolean
+  - PresencaMT: boolean
+  - CodTipoProvaCN: int
+  - CodTipoProvaCH: int
+  - CodTipoProvaLC: int
+  - CodTipoProvaMT: int
+  - NotaCN: real
+  - NotaCH: real
+  - NotaLC: real
+  - NotaMT: real
+  - VetRespCN: string
+  - VetRespCH: string
+  - VetRespLC: string
+  - VetRespMT: string
+  - VetGabCN: string
+  - VetGabCH: string
+  - VetGabLC: string
+  - VetGabMT: string
+  - LinguaEstrangeira: string
 
-### ProvaAreaConhecimento
+## Redacao
 - **Atributos:**
-  - AreaConhecimento: string
-  - Nota: int
-  - Presente: bool
-
-### Redacao
-- **Atributos:**
-  - Nota: int
-  - Presente: bool
-  - Competencia1: int
-  - Competencia2: int
-  - Competencia3: int
-  - Competencia4: int
-  - Competencia5: int
-
-
-#### Identificação de Relacionamentos
-
-Aluno e Inscricao: 1 para 1 (um para um).
-Aluno e Escolaridade: 1 para 1 (um para um).
-Inscricao e Escola: M para 1 (muitos para um) - uma escola pode ter várias inscrições.
-Inscricao e ProvaArea: 1 para N (um para muitos) - uma inscrição pode ter várias áreas de conhecimento.
-            Inscricao e Redacao: 1 para 1 (um para um).
+  - NumInscricao
+  - StatusRedacao: string
+  - NotaComp1: real
+  - NotaComp2: real
+  - NotaComp3: real
+  - NotaComp4: real
+  - NotaComp5: real
+  - NotaRedacao: real
 
 
 ### Modelo Físico
@@ -108,5 +130,9 @@ Inscricao e ProvaArea: 1 para N (um para muitos) - uma inscrição pode ter vár
 - GUILHERME FONTES DE JESUS 
 - LUAN FABRICIO DE CARVALHO
 - NICEU SANTOS BIRIBA
+
+### Link do projeto disponível no google drive
+
+[![Projeto no Google Drive](url-gd)](https://docs.google.com/document/d/1C5fU20dS7DPIUfHb00cluzG7viHoEDgtuZTgfECfXYU/edit#heading=h.w7vclt5z8ke6)
 
 
