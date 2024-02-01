@@ -97,5 +97,16 @@ Inscricao e ProvaArea: 1 para N (um para muitos) - uma inscrição pode ter vár
 
 ### Modelo Físico
 
-- Detalhes sobre a criação do banco de dados...
+- O modelo físico de dados é crucial para representar a estrutura de dados de forma detalhada e específica para um sistema de banco de dados. Ele inclui informações como tipos de dados, chaves primárias, chaves estrangeiras, restrições de integridade, índices e outras características específicas do banco de dados. Ao transformar o modelo conceitual em um modelo físico, estamos traduzindo a visão de alto nível em algo que pode ser implementado diretamente no sistema de gerenciamento de banco de dados (SGBD).
+- [![Modelo Físico](url-físico)](https://drive.google.com/file/d/14gMYCMkViRwF2DeJm9jJBEJWgNZ60j-G/view?usp=sharing)
+
+
+### Participantes
+
+- CÍCERO MIGUEL DA SILVA
+- FELIPE SANTOS ROCHA
+- GUILHERME FONTES DE JESUS 
+- LUAN FABRICIO DE CARVALHO
+- NICEU SANTOS BIRIBA
+
 
