@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "1mZ19BU1tJhwhpznRfNgi1gVfIUoReLqSbUz+mvRMBZfMirgV2V3fadYVAaG08NXrJOJSqz26IJyEHAEwp9bQg==",
+  "dgSpecHash": "ZuckC3LAxScLIDkEQg/vsZulgKM5tPqWyOVnwOKEsVHCQWLO6CZJaSNblwN6IvW93zDfI5njdeLJaNmLbeAaLQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Felipe\\source\\repos\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.Application\\MicrodadosEnemSergipe.Application.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Felipe\\Desktop\\Microdados enem\\Microdados-ENEM-SE\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.Application\\MicrodadosEnemSergipe.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Felipe\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\Felipe\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
