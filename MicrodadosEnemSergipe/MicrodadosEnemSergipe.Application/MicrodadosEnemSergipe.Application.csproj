@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Exemplos\CriarExemplo\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MicrodadosEnemSergipe.Domain\MicrodadosEnemSergipe.Domain.csproj" />
   </ItemGroup>
 
