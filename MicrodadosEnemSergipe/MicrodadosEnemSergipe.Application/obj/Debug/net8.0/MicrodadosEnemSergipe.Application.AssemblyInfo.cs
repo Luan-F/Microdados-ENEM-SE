@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MicrodadosEnemSergipe.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7eac845cce9040c4c2bae59350d8a155e34beb77")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d167d9cb470093a926873c3ca0d3bbad5b2693d6")]
 [assembly: System.Reflection.AssemblyProductAttribute("MicrodadosEnemSergipe.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MicrodadosEnemSergipe.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
