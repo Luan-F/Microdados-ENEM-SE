@@ -53,6 +53,7 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "MediatR": "12.2.0",
+          "MicrodadosEnemSergipe.Domain": "1.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1"
         },
         "compile": {
@@ -60,6 +61,16 @@
         },
         "runtime": {
           "bin/placeholder/MicrodadosEnemSergipe.Application.dll": {}
+        }
+      },
+      "MicrodadosEnemSergipe.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/MicrodadosEnemSergipe.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MicrodadosEnemSergipe.Domain.dll": {}
         }
       }
     }
@@ -131,6 +142,11 @@
       "type": "project",
       "path": "../MicrodadosEnemSergipe.Application/MicrodadosEnemSergipe.Application.csproj",
       "msbuildProject": "../MicrodadosEnemSergipe.Application/MicrodadosEnemSergipe.Application.csproj"
+    },
+    "MicrodadosEnemSergipe.Domain/1.0.0": {
+      "type": "project",
+      "path": "../MicrodadosEnemSergipe.Domain/MicrodadosEnemSergipe.Domain.csproj",
+      "msbuildProject": "../MicrodadosEnemSergipe.Domain/MicrodadosEnemSergipe.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
