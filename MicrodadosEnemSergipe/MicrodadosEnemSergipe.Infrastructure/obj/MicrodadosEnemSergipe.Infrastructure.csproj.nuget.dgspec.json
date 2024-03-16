@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Felipe\\source\\repos\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.Infrastructure\\MicrodadosEnemSergipe.Infrastructure.csproj": {}
+    "C:\\Users\\Felipe\\Desktop\\Microdados enem\\Microdados-ENEM-SE\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.Infrastructure\\MicrodadosEnemSergipe.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Felipe\\source\\repos\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.Infrastructure\\MicrodadosEnemSergipe.Infrastructure.csproj": {
+    "C:\\Users\\Felipe\\Desktop\\Microdados enem\\Microdados-ENEM-SE\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.Infrastructure\\MicrodadosEnemSergipe.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Felipe\\source\\repos\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.Infrastructure\\MicrodadosEnemSergipe.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Felipe\\Desktop\\Microdados enem\\Microdados-ENEM-SE\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.Infrastructure\\MicrodadosEnemSergipe.Infrastructure.csproj",
         "projectName": "MicrodadosEnemSergipe.Infrastructure",
-        "projectPath": "C:\\Users\\Felipe\\source\\repos\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.Infrastructure\\MicrodadosEnemSergipe.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\Felipe\\Desktop\\Microdados enem\\Microdados-ENEM-SE\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.Infrastructure\\MicrodadosEnemSergipe.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Felipe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Felipe\\source\\repos\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\Felipe\\Desktop\\Microdados enem\\Microdados-ENEM-SE\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

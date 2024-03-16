@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MicrodadosEnemSergipe.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+064dc857b4447dddd582554abe8506b77220fcce")]
 [assembly: System.Reflection.AssemblyProductAttribute("MicrodadosEnemSergipe.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MicrodadosEnemSergipe.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
