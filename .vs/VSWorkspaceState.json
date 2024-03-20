@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\PDF"
+    "\\MicrodadosEnemSergipe",
+    "\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.WebApp",
+    "\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.WebApp\\Pages",
+    "\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.WebApp\\Pages\\Shared"
   ],
-  "SelectedNode": "\\PDF",
+  "SelectedNode": "\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.WebApp\\Pages\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }

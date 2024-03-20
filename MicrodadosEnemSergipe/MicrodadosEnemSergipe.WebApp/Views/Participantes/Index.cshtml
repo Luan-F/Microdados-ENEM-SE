@@ -1,0 +1,95 @@
+﻿@using MicrodadosEnemSergipe.WebApp.Helpers
+@* @model IEnumerable<Participante>  *@
+@model PaginatedList<Participante>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Ano enem
+            </th>
+            <th>
+               Faixa etária
+            </th>
+            <th>
+                Sexo
+            </th>
+            <th>
+                Estado civil 
+            </th>
+            <th>
+                Raça
+            </th>
+            <th>
+                Nacionalidade
+            </th>
+            <th>
+                Treineiro
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnoEnem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FaixaEtaria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sexo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoCivil)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Raca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nacionalidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Treineiro)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NumeroInscricao">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.NumeroInscricao">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.NumeroInscricao">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<nav>
+    <ul class="pagination">
+        @if (Model.HasPreviousPage)
+        {
+            <li class="page-item">
+                <a class="page-link" href="?page=@(Model.PageIndex - 1)">Previous</a>
+            </li>
+        }
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                <a class="page-link" href="?page=@i">@i</a>
+            </li>
+        }
+        @if (Model.HasNextPage)
+        {
+            <li class="page-item">
+                <a class="page-link" href="?page=@(Model.PageIndex + 1)">Next</a>
+            </li>
+        }
+    </ul>
+</nav>
