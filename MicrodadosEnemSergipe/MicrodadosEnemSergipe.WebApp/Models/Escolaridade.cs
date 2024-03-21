@@ -42,4 +42,7 @@ public class Escolaridade
 
     [Column("situcao_funcionamento")]
     public string? SitucaoFuncionamento { get; set; }
+
+
+
 }
