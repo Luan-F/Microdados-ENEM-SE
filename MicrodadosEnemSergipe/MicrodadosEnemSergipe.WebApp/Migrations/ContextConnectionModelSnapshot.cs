@@ -21,74 +21,9 @@ namespace MicrodadosEnemSergipe.WebApp.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Participante", b =>
-                {
-                    b.Property<string>("NumeroInscricao")
-                        .HasColumnType("text")
-                        .HasColumnName("numero_inscricao");
+            
 
-                    b.Property<int>("AnoEnem")
-                        .HasColumnType("integer")
-                        .HasColumnName("ano_enem");
-
-                    b.Property<string>("EstadoCivil")
-                        .HasColumnType("text")
-                        .HasColumnName("estado_civil");
-
-                    b.Property<string>("FaixaEtaria")
-                        .HasColumnType("text")
-                        .HasColumnName("faixa_etaria");
-
-                    b.Property<string>("Nacionalidade")
-                        .HasColumnType("text")
-                        .HasColumnName("nacionalidade");
-
-                    b.Property<string>("Raca")
-                        .HasColumnType("text")
-                        .HasColumnName("raca");
-
-                    b.Property<string>("Sexo")
-                        .HasColumnType("text")
-                        .HasColumnName("sexo");
-
-                    b.Property<int>("Treineiro")
-                        .HasColumnType("integer")
-                        .HasColumnName("treineiro");
-
-                    b.HasKey("NumeroInscricao");
-
-                    b.ToTable("participante");
-                });
-
-            modelBuilder.Entity("Usuario", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
-
-                    b.Property<string>("Email")
-                        .HasColumnType("text")
-                        .HasColumnName("email");
-
-                    b.Property<bool>("IsAdministrador")
-                        .HasColumnType("boolean")
-                        .HasColumnName("isadministrador");
-
-                    b.Property<string>("Nome")
-                        .HasColumnType("text")
-                        .HasColumnName("nome");
-
-                    b.Property<string>("Senha")
-                        .HasColumnType("text")
-                        .HasColumnName("senha");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("usuario");
-                });
+          
 #pragma warning restore 612, 618
         }
     }

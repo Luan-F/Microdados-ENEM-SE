@@ -13,5 +13,9 @@ namespace MicrodadosEnemSergipe.WebApp.Data
 
         public DbSet<Participante> participante { get; set; }
         public DbSet<Usuario> usuario { get; set; }
+        public DbSet<LocalDeAplicacao> localdeaplicacao { get; set; }
+        public DbSet<Redacao> redacao { get; set; }
+        public DbSet<Escolaridade> escolaridade { get; set; }
+        public DbSet<ProvaAreaConhecimento> provaareaconhecimento { get; set; }
     }
 }

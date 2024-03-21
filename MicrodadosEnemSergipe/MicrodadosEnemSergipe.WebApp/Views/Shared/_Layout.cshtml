@@ -20,10 +20,25 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            @Html.ActionLink("Home", "Index", "Home", new { Area = "" }, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            @Html.ActionLink("Participantes", "Index", "Participantes", new { Area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Redação", "Index", "Redacaos", new { Area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Prova Area Conhecimento", "Index", "ProvaAreaConhecimentoes", new { Area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Local De Aplicação", "Index", "LocalDeAplicacaos", new { Area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Escolaridade", "Index", "Escolaridades", new { Area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Usuarios", "Index", "Usuarioss", new { Area = "" }, new { @class = "nav-link" })
                         </li>
                     </ul>
                 </div>
