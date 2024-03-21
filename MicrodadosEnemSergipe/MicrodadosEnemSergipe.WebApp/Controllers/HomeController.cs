@@ -18,6 +18,10 @@ namespace testando.Controllers
         {
             return View();
         }
+        public IActionResult Readme()
+        {
+            return View();
+        }
 
    
 

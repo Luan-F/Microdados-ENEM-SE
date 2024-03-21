@@ -2,10 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\MicrodadosEnemSergipe",
-    "\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.WebApp",
-    "\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.WebApp\\Pages",
-    "\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.WebApp\\Pages\\Shared"
+    "\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.Infrastructure",
+    "\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.WebApp"
   ],
-  "SelectedNode": "\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.WebApp\\Pages\\Shared\\_Layout.cshtml",
+  "SelectedNode": "\\MicrodadosEnemSergipe\\MicrodadosEnemSergipe.WebApp\\Properties",
   "PreviewInSolutionExplorer": false
 }
