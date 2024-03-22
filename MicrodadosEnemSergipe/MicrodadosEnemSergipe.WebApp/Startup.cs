@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MicrodadosEnemSergipe.WebApp.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace testando
 {
@@ -23,9 +24,18 @@ namespace testando
         {
             services.AddControllersWithViews();
 
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/Account/Login";
+                    options.AccessDeniedPath = "/Account/AccessDenied";
+                });
+
 
             services.AddDbContext<ContextConnection>(options =>
                     options.UseNpgsql(Configuration.GetConnectionString("ContextConnection")));
+            // Configurar o esquema de autenticação padrão
+
 
         }
 
@@ -46,14 +56,32 @@ namespace testando
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapControllerRoute(
+            //        name: "default",
+            //        pattern: "{controller=Home}/{action=Index}/{id?}");
+            //});
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                //endpoints.MapControllerRoute(
+                //    name: "login",
+                //    pattern: "login",
+                //    defaults: new { controller = "Account", action = "Login" });
+                //endpoints.MapControllerRoute(
+                //    name: "upload",
+                //    pattern: "upload",
+                //    defaults: new { controller = "Account", action = "ImportDados" });
+                //endpoints.MapControllerRoute(
+                //    name: "uploadSuccess",
+                //    pattern: "upload/success",
+                //    defaults: new { controller = "Account", action = "ImportacaoConcluida" });
             });
         }
     }

@@ -12,6 +12,7 @@ public class Usuario
     public bool IsAdministrador { get; set; }
 
     [Column("nome")]
+
     public string? Nome { get; set; }
 
     [Column("email")]
