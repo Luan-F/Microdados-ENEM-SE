@@ -14,6 +14,7 @@ public class AccountController : Controller
     {
         _context = context;
     }
+
     [Authorize]
     public IActionResult ImportDados()
     {
@@ -196,6 +197,11 @@ public class AccountController : Controller
         }
     }
 
-
+    [HttpPost]
+    public async Task<IActionResult> Logout()
+    {
+        await HttpContext.SignOutAsync();
+        return RedirectToAction("Index", "Home");
+    }
 }
 

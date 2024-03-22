@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MicrodadosEnemSergipe.WebApp.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using static AccountController;
 
 namespace testando
 {
@@ -34,9 +35,7 @@ namespace testando
 
             services.AddDbContext<ContextConnection>(options =>
                     options.UseNpgsql(Configuration.GetConnectionString("ContextConnection")));
-            // Configurar o esquema de autenticação padrão
-
-
+       
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,6 +69,11 @@ namespace testando
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+                    name: "logout",
+                    pattern: "Account/Logout",
+                    defaults: new { controller = "Account", action = "Logout" });
+
                 //endpoints.MapControllerRoute(
                 //    name: "login",
                 //    pattern: "login",
