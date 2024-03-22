@@ -15,6 +15,9 @@
     <thead>
         <tr>
             <th>
+                Numero inscricao
+            </th>
+            <th>
                 Ano enem
             </th>
             <th>
@@ -41,6 +44,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroInscricao)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.AnoEnem)
             </td>
