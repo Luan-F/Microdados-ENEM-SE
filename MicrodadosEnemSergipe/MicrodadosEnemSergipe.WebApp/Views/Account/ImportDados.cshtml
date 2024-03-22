@@ -1,4 +1,15 @@
-﻿<form method="post" enctype="multipart/form-data" asp-controller="Account" asp-action="ImportDados">
+﻿@* <form method="post" enctype="multipart/form-data" asp-controller="Account" asp-action="ImportDados">
     <input type="file" name="csvFile" accept=".csv" required>
     <button type="submit">Enviar Arquivo CSV</button>
 </form>
+ *@
+<div class="container importDados">
+    <h2>Importar Arquivo CSV</h2>
+    <form method="post" enctype="multipart/form-data" asp-controller="Account" asp-action="ImportDados">
+        <div class="file-input">
+            <input type="file" id="csvFile" name="csvFile" accept=".csv" required>
+            <label for="csvFile">Escolher Arquivo CSV</label>
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+</div>
