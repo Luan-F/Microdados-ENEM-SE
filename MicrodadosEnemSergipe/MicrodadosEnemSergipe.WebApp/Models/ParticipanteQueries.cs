@@ -1,10 +1,5 @@
 using MicrodadosEnemSergipe.WebApp.Data;
-public class ParticipanteQueries {
-	public IQueryable<ProvaAreaConhecimento> provasAreaConhecimento;
-	public IQueryable<Participante> participantes;
-	public IQueryable<Redacao> redacoes;
-	public IQueryable<Escolaridade> escolaridades;
-
+public class ParticipanteQueries : AbstractQueryClass {
 	public ParticipanteQueries(ContextConnection context)
 	{
 		provasAreaConhecimento = context.provaareaconhecimento.AsQueryable();
