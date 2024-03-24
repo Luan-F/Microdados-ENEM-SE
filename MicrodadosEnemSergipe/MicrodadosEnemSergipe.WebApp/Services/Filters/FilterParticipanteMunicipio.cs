@@ -6,8 +6,12 @@ public class FilterParticipanteMunicipio : BaseFilter {
 		this.municipio = municipio;
 	}
 
-	public override ParticipanteQueries Filter(ParticipanteQueries query)
+	public override AbstractQueryClass Filter(AbstractQueryClass query)
 	{
+		if (query.escolaridades == null) {
+			throw new Exception("Campo escolaridades é nulo");
+		}
+
 		query.escolaridades = query.escolaridades.Where(e => e.NomeMunicipio == municipio);
 
 		if (next == null) {

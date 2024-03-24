@@ -9,8 +9,12 @@ public class FilterParticipanteArea : BaseFilter {
 		this.rangeLC = rangeLC;
 	}
 
-	public override ParticipanteQueries Filter(ParticipanteQueries query)
+	public override AbstractQueryClass Filter(AbstractQueryClass query)
 	{
+		if (query.provasAreaConhecimento == null) {
+			throw new Exception("Campo provasAreaConhecimento é nulo");
+		}
+
 		if (rangeCH != null) {
 			query.provasAreaConhecimento = query
 				.provasAreaConhecimento.Where(

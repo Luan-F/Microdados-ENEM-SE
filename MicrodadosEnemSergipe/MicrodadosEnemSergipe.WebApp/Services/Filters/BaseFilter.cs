@@ -4,5 +4,5 @@ public abstract class BaseFilter : IFilter {
 	public void SetFilter(IFilter filter) {
 		this.next = filter;
 	}
-	public abstract ParticipanteQueries Filter(ParticipanteQueries query);
+	public abstract AbstractQueryClass Filter(AbstractQueryClass query);
 }
