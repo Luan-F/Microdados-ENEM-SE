@@ -14,8 +14,12 @@ public class FilterParticipantePresenca : BaseFilter {
 		this.presente = presente;
 	}
 
-	public override ParticipanteQueries Filter(ParticipanteQueries query)
+	public override AbstractQueryClass Filter(AbstractQueryClass query)
 	{
+		if (query.provasAreaConhecimento == null) {
+			throw new Exception("Campo provaAreaConhecimento é nulo");
+		}
+
 		query.provasAreaConhecimento = query.provasAreaConhecimento.Where(checkDia());
 
 		if (next == null) {
