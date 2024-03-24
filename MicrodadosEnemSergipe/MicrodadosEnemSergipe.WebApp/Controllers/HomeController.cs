@@ -16,7 +16,23 @@ namespace testando.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var mediaGeralDeCadaMunicio = 
+                new ChartData(new List<string> { "January", "February", "March", "April" }, new List<int> { 10, 20, 30, 40 });
+            var desempenhoPorAreaDoConhecimento = 
+                new ChartData(
+                    new List<string> { "Linguagens e Códigos", "Matemática e suas Tecnologias", "Ciências Humanas", "Ciências da Natureza", "Redação" }, 
+                    new List<int> { 10, 20, 30, 40 });
+            var mediaPorPresenca = 
+                new ChartData(new List<string> { "January", "February", "March", "April" }, new List<int> { 550, 420, 660, 560, 740 });
+
+            var model = new HomeViewModel
+            {
+                MediaGeralDeCadaMunicipio = mediaGeralDeCadaMunicio,
+                MediaPorPresenca = mediaPorPresenca,
+                DesempenhoPorAreaDoConhecimento = desempenhoPorAreaDoConhecimento
+            };
+
+            return View(model);
         }
         public IActionResult Readme()
         {

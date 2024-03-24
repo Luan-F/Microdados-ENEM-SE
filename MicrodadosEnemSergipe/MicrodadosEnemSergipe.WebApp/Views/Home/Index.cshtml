@@ -1,1 +1,132 @@
-﻿<h1>Dados sobre o enem</h1> 
+﻿@model MicrodadosEnemSergipe.WebApp.Models.HomeViewModel
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<main>
+    <h1>Olá, {user_name}</h1>
+    <p>Seja bem vindo ao dashboard</p>
+
+    <div class="d-flex gap-4 flex-column">
+        <div class="card-grafico">
+            <h3 class="p-2">
+                Média geral de cada município.
+            </h3>
+            <hr />
+            <div class="p-2" style="width: 600px;">
+
+                <canvas id="geral-por-municipio" width="400" height="400"></canvas>
+            </div>
+        </div>
+
+        <div class="card-grafico">
+            <h3 class="p-2">
+                Desempenho por área do conhecimento.
+            </h3>
+            <hr />
+            <div class="p-2" style="width: 600px;">
+
+                <canvas id="desempenho-por-area-do-conhecimento" width="400" height="400"></canvas>
+            </div>
+        </div>
+
+        <div class="card-grafico">
+            <h3 class="p-2">
+                Média por presença.
+            </h3>
+            <hr />
+            <div class="p-2" style="width: 600px;">
+                <canvas id="media-por-presenca" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<script>
+    var geral_por_municipio = document.getElementById('geral-por-municipio').getContext('2d');
+    var desempenho_por_area_do_conhecimento = document.getElementById('desempenho-por-area-do-conhecimento').getContext('2d');
+    var media_por_presenca = document.getElementById('media-por-presenca').getContext('2d');
+
+    var geral_por_municipio_chart = new Chart(geral_por_municipio, {
+        type: 'bar',
+        data: {
+            labels: @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.MediaGeralDeCadaMunicipio.Labels)),
+            datasets: [{
+                label: '# of Votes',
+                data: @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.MediaGeralDeCadaMunicipio.Data)),
+                backgroundColor: [
+                    'rgba(100, 25, 255, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(100, 25, 255, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    var desempenho_por_area_do_conhecimento_chart = new Chart(desempenho_por_area_do_conhecimento, {
+        type: 'bar',
+        data: {
+            labels: @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.DesempenhoPorAreaDoConhecimento.Labels)),
+            datasets: [{
+                label: '# of Votes',
+                data: @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.DesempenhoPorAreaDoConhecimento.Data)),
+                backgroundColor: [
+                    'rgba(100, 25, 255, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(100, 25, 255, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    var media_por_presenca_chart = new Chart(media_por_presenca, {
+        type: 'bar',
+        data: {
+            labels: @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.MediaPorPresenca.Labels)),
+            datasets: [{
+                label: '# of Votes',
+                data: @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.MediaPorPresenca.Data)),
+                backgroundColor: [
+                    'rgba(100, 25, 255, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(100, 25, 255, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+</script>
+
+<style>
+    .card-grafico {
+        background-color: #fff;
+        border: 1px solid #dddddd70;
+        border-radius: 8px;
+    }
+</style>
