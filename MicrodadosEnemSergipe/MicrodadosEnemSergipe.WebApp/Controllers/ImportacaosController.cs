@@ -43,6 +43,7 @@ namespace MicrodadosEnemSergipe.WebApp.Controllers
                     MediaNotaComp3 = (decimal)g.Average(m => m.NotaComp3),
                     MediaNotaComp4 = (decimal)g.Average(m => m.NotaComp4),
                     MediaNotaComp5 = (decimal)g.Average(m => m.NotaComp5),
+                    MediaPresenca1 = (decimal)(g.Average(m => ((bool)m.PresencaCH ? 1 : 0) + ((bool)m.PresencaCH ? 1 : 0) + ((bool)m.PresencaMT ? 1 : 0) + ((bool)m.PresencaLC ? 1 : 0)) / 4),
                     MediaNotaRedacao = (decimal)g.Average(m => m.NotaRedacao)
                 })
                 .ToList();
