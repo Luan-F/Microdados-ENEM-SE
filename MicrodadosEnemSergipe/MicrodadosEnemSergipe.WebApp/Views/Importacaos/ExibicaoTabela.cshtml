@@ -1,0 +1,41 @@
+﻿@model IEnumerable<DadosGeraisViewModel>
+
+<h1>Dados Gerais por Município</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Município</th>
+            <th>Média Nota CN</th>
+            <th>Média Nota CH</th>
+            <th>Média Nota LC</th>
+            <th>Média Nota MT</th>
+            <th>Nota Total</th>
+            <th>Média Nota Comp1</th>
+            <th>Média Nota Comp2</th>
+            <th>Média Nota Comp3</th>
+            <th>Média Nota Comp4</th>
+            <th>Média Nota Comp5</th>
+            <th>Média Nota Redação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.NomeMunicipio</td>
+                <td>@item.MediaNotaCN</td>
+                <td>@item.MediaNotaCH</td>
+                <td>@item.MediaNotaLC</td>
+                <td>@item.MediaNotaMT</td>
+                <td>@item.NotaTotal</td>
+                <td>@item.MediaNotaComp1</td>
+                <td>@item.MediaNotaComp2</td>
+                <td>@item.MediaNotaComp3</td>
+                <td>@item.MediaNotaComp4</td>
+                <td>@item.MediaNotaComp5</td>
+                <td>@item.MediaNotaRedacao</td>
+            </tr>
+        }
+    </tbody>
+</table>
