@@ -11,7 +11,7 @@ public class Escolaridade
     public string? SituacaoConclusao { get; set; }
 
     [Column("ano_conclusao")]
-    public int AnoConclusao { get; set; }
+    public int? AnoConclusao { get; set; }
 
     [Column("tipo_escola")]
     public string? TipoEscola { get; set; }

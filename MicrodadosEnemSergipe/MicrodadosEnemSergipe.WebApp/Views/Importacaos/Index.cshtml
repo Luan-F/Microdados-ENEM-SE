@@ -1,0 +1,127 @@
+﻿@model IEnumerable<Temporario.Importacao>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.NomeMunicipio)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.PresencaCN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PresencaCH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PresencaLC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PresencaMT)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.NotaCN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NotaCH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NotaLC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NotaMT)
+            </th>
+           
+           
+            <th>
+                @Html.DisplayNameFor(model => model.NotaComp1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NotaComp2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NotaComp3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NotaComp4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NotaComp5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NotaRedacao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeMunicipio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PresencaCN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PresencaCH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PresencaLC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PresencaMT)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaCN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaCH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaLC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaMT)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaComp1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaComp2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaComp3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaComp4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaComp5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaRedacao)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NumeroInscricao">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.NumeroInscricao">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.NumeroInscricao">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

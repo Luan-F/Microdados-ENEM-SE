@@ -19,7 +19,7 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
+                        @* <li class="nav-item">
                             @Html.ActionLink("Home", "Index", "Home", new { Area = "" }, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
@@ -39,6 +39,9 @@
                         </li>
                         <li class="nav-item">
                             @Html.ActionLink("Usuarios", "Index", "Usuarioss", new { Area = "" }, new { @class = "nav-link" })
+                        </li> *@
+                        <li class="nav-item">
+                            @Html.ActionLink("Tabelas de medias por municipio", "ExibicaoTabela", "Importacaos", new { Area = "" }, new { @class = "nav-link" })
                         </li>
                     </ul>
                     <ul class="navbar-nav flex-grow-1">
@@ -65,7 +68,7 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container-fluid">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
