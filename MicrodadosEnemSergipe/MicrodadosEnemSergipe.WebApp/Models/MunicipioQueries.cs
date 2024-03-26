@@ -83,6 +83,8 @@ public class MunicipioQueries : AbstractQueryClass {
 			NotaComp4 = x.NotaComp4,
 			NotaComp5 = x.NotaComp5,
 			NotaRedacao = x.NotaRedacao,
+			NotaGeral = (x.NotaCH + x.NotaLC + x.NotaRedacao
+					+ x.NotaCN + x.NotaMT) / 5,
 			PresencaDia1 = x.PresencaDia1,
 			PresencaDia2 = x.PresencaDia2,
 		});
