@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using MicrodadosEnemSergipe.WebApp.Data;
 using Temporario;
 using System.Collections.Generic;
+using MicrodadosEnemSergipe.WebApp.Helpers;
 using System.Linq;
 
 public class ImportacaosController : Controller
@@ -39,5 +40,17 @@ public class ImportacaosController : Controller
         return View();
     }
 
+    public async Task<IActionResult> TabelaParticipantes(int? page)
+    {
+	var pageSize = 15;
+	var dbContext = _context.GetContext();
 
+	AbstractQueryClass dados = new ParticipanteQueries(dbContext);
+
+	var participanteQueries = new ParticipanteQueries(dbContext);
+	participanteQueries.CopyFromAbstract(dados);
+	var paginedList = await PaginatedList<ParticipanteDados>.CreateAsync(participanteQueries.ExecuteJoin(), page ?? 1, pageSize);
+
+	return View(paginedList);
+    }
 }
