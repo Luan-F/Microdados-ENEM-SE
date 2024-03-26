@@ -11,9 +11,9 @@ namespace MicrodadosEnemSergipe.WebApp.Controllers
 {
     public class UsuariossController : Controller
     {
-        private readonly ContextConnection _context;
+        private readonly SingletonContextManager _context;
 
-        public UsuariossController(ContextConnection context)
+        public UsuariossController(SingletonContextManager context)
         {
             _context = context;
         }
@@ -21,7 +21,10 @@ namespace MicrodadosEnemSergipe.WebApp.Controllers
         // GET: Usuarioss
         public async Task<IActionResult> Index()
         {
-            return View(await _context.usuario.ToListAsync());
+
+            var dbContext = _context.GetContext();
+
+            return View(await dbContext.usuario.ToListAsync());
         }
 
         // GET: Usuarioss/Details/5
@@ -31,8 +34,9 @@ namespace MicrodadosEnemSergipe.WebApp.Controllers
             {
                 return NotFound();
             }
+            var dbContext = _context.GetContext();
 
-            var usuario = await _context.usuario
+            var usuario = await dbContext.usuario
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (usuario == null)
             {
@@ -55,10 +59,11 @@ namespace MicrodadosEnemSergipe.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,IsAdministrador,Nome,Email,Senha")] Usuario usuario)
         {
+            var dbContext = _context.GetContext();
             if (ModelState.IsValid)
             {
-                _context.Add(usuario);
-                await _context.SaveChangesAsync();
+                dbContext.Add(usuario);
+                await dbContext.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(usuario);
@@ -67,12 +72,13 @@ namespace MicrodadosEnemSergipe.WebApp.Controllers
         // GET: Usuarioss/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            var dbContext = _context.GetContext();
             if (id == null)
             {
                 return NotFound();
             }
 
-            var usuario = await _context.usuario.FindAsync(id);
+            var usuario = await dbContext.usuario.FindAsync(id);
             if (usuario == null)
             {
                 return NotFound();
@@ -87,6 +93,7 @@ namespace MicrodadosEnemSergipe.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ID,IsAdministrador,Nome,Email,Senha")] Usuario usuario)
         {
+            var dbContext = _context.GetContext();
             if (id != usuario.ID)
             {
                 return NotFound();
@@ -96,8 +103,8 @@ namespace MicrodadosEnemSergipe.WebApp.Controllers
             {
                 try
                 {
-                    _context.Update(usuario);
-                    await _context.SaveChangesAsync();
+                    dbContext.Update(usuario);
+                    await dbContext.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -118,12 +125,13 @@ namespace MicrodadosEnemSergipe.WebApp.Controllers
         // GET: Usuarioss/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            var dbContext = _context.GetContext();
             if (id == null)
             {
                 return NotFound();
             }
 
-            var usuario = await _context.usuario
+            var usuario = await dbContext.usuario
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (usuario == null)
             {
@@ -138,19 +146,21 @@ namespace MicrodadosEnemSergipe.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var usuario = await _context.usuario.FindAsync(id);
+            var dbContext = _context.GetContext();
+            var usuario = await dbContext.usuario.FindAsync(id);
             if (usuario != null)
             {
-                _context.usuario.Remove(usuario);
+                dbContext.usuario.Remove(usuario);
             }
 
-            await _context.SaveChangesAsync();
+            await dbContext.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool UsuarioExists(int id)
         {
-            return _context.usuario.Any(e => e.ID == id);
+            var dbContext = _context.GetContext();
+            return dbContext.usuario.Any(e => e.ID == id);
         }
     }
 }
