@@ -17,48 +17,48 @@ public class FilterParticipanteRedacao : BaseFilter {
 
 	public override AbstractQueryClass Filter(AbstractQueryClass query)
 	{
-		if (query.redacoes == null) {
-			throw new Exception("Campo redacoes é nulo");
+		if (query.participanteDados == null) {
+			throw new Exception("Campo participanteDados é nulo");
 		}
 
 		if (rangeComp1 != null) {
-			query.redacoes = query
-				.redacoes.Where(
+			query.participanteDados = query
+				.participanteDados.Where(
 						p => p.NotaComp1 >= rangeComp1[0]
 						&& p.NotaComp1 <= rangeComp1[1]);
 		}
 
 		if (rangeComp2 != null) {
-			query.redacoes = query
-				.redacoes.Where(
+			query.participanteDados = query
+				.participanteDados.Where(
 						p => p.NotaComp2 >= rangeComp2[0]
 						&& p.NotaComp2 <= rangeComp2[1]);
 		}
 
 		if (rangeComp3 != null) {
-			query.redacoes = query
-				.redacoes.Where(
+			query.participanteDados = query
+				.participanteDados.Where(
 						p => p.NotaComp3 >= rangeComp3[0]
 						&& p.NotaComp3 <= rangeComp3[1]);
 		}
 
 		if (rangeComp4 != null) {
-			query.redacoes = query
-				.redacoes.Where(
+			query.participanteDados = query
+				.participanteDados.Where(
 						p => p.NotaComp4 >= rangeComp4[0]
 						&& p.NotaComp4 <= rangeComp4[1]);
 		}
 
 		if (rangeComp5 != null) {
-			query.redacoes = query
-				.redacoes.Where(
+			query.participanteDados = query
+				.participanteDados.Where(
 						p => p.NotaComp5 >= rangeComp5[0]
 						&& p.NotaComp5 <= rangeComp5[1]);
 		}
 
 		if (rangeRedacao != null) {
-			query.redacoes = query
-				.redacoes.Where(
+			query.participanteDados = query
+				.participanteDados.Where(
 						p => p.NotaRedacao >= rangeRedacao[0]
 						&& p.NotaRedacao <= rangeRedacao[1]);
 		}

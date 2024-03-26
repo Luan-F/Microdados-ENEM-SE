@@ -8,11 +8,11 @@ public class FilterParticipanteMunicipio : BaseFilter {
 
 	public override AbstractQueryClass Filter(AbstractQueryClass query)
 	{
-		if (query.escolaridades == null) {
-			throw new Exception("Campo escolaridades é nulo");
+		if (query.participanteDados == null) {
+			throw new Exception("Campo participanteDados é nulo");
 		}
 
-		query.escolaridades = query.escolaridades.Where(e => e.NomeMunicipio == municipio);
+		query.participanteDados = query.participanteDados.Where(e => e.NomeMunicipio == municipio);
 
 		if (next == null) {
 			return query;
