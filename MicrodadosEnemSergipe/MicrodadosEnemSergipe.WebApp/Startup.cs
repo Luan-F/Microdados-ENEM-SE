@@ -25,7 +25,7 @@ namespace testando
         {
             services.AddControllersWithViews();
 
-            services.AddScoped<IDadosGeraisStrategy, MediaSimplesDadosGeraisStrategy>();
+            services.AddScoped<IStrategy, MediaSimplesstrategy>();
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>
@@ -37,7 +37,8 @@ namespace testando
 
             services.AddDbContext<ContextConnection>(options =>
                     options.UseNpgsql(Configuration.GetConnectionString("ContextConnection")));
-       
+
+            services.AddSingleton<SingletonContextManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

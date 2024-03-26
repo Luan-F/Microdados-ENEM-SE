@@ -8,32 +8,34 @@ using System.Linq;
 
 public class ImportacaosController : Controller
 {
-    private readonly IDadosGeraisStrategy _dadosGeraisStrategy;
-    private readonly ContextConnection _context;
+    private readonly IStrategy _strategy;
 
-    public ImportacaosController(IDadosGeraisStrategy dadosGeraisStrategy, ContextConnection context)
+    private readonly SingletonContextManager _context;
+
+    public ImportacaosController(IStrategy strategy, SingletonContextManager context)
     {
-        _dadosGeraisStrategy = dadosGeraisStrategy;
-        _context = context;
+        this._strategy = strategy;
+
+        this._context = context;
     }
 
     public IActionResult ExibicaoTabela()
     {
-       AbstractQueryClass abstractQuery = new MunicipioQueries(_context);
-       var query = new MunicipioQueries(_context);
+        var dbContext = _context.GetContext();
+       AbstractQueryClass abstractQuery = new MunicipioQueries(dbContext);
+       var query = new MunicipioQueries(dbContext);
        query.CopyFromAbstract(abstractQuery);
        var dados = query.ExecuteJoin()
 	       .ToList();
 
-       //  var dados = _context.importacao
-       //     .Where(m => m.CodigoUF == 28) // Filtra apenas pelo código UF 28
-       //     .GroupBy(m => m.NomeMunicipio) // Agrupa por município
-       //     .Select(g => g.ToList()) // Converte cada grupo em uma lista
-       //     .ToList(); // Converte para uma lista
-
-        var resultado = dados;// d => _dadosGeraisStrategy.CalcularDadosGerais(d));
+        var resultado = dados;
 
         return View(resultado);
+    }
+
+    public IActionResult Graficos()
+    {
+        return View();
     }
 
 
