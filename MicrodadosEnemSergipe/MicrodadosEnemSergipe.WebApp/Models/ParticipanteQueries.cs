@@ -36,7 +36,7 @@ public class ParticipanteQueries : AbstractQueryClass {
 						redacao.NotaComp4,
 						redacao.NotaComp5,
 						redacao.NotaRedacao,
-		}).Join(escolaridades,
+		}).Join(escolaridades.Where(x => x.CodigoUF == 28),
 				notaParticipante => notaParticipante.NInscricao,
 				escolaridade => escolaridade.NumeroInscricao,
 				(notaParticipante, escolaridade) =>
