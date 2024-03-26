@@ -20,6 +20,8 @@ public class ParticipanteQueries : AbstractQueryClass {
 						provaAC.NotaCN,
 						provaAC.NotaLC,
 						provaAC.NotaMT,
+						PresencaDia1 = provaAC.PresencaCH,
+						PresencaDia2 = provaAC.PresencaCN,
 		}).Join(redacoes,
 				notaParticipante => notaParticipante.NInscricao,
 				redacao => redacao.NumeroInscricao,
@@ -36,6 +38,8 @@ public class ParticipanteQueries : AbstractQueryClass {
 						redacao.NotaComp4,
 						redacao.NotaComp5,
 						redacao.NotaRedacao,
+						notaParticipante.PresencaDia1,
+						notaParticipante.PresencaDia2,
 		}).Join(escolaridades,
 				notaParticipante => notaParticipante.NInscricao,
 				escolaridade => escolaridade.NumeroInscricao,
@@ -53,6 +57,8 @@ public class ParticipanteQueries : AbstractQueryClass {
 						notaParticipante.NotaComp5,
 						notaParticipante.NotaRedacao,
 						escolaridade.NomeMunicipio,
+						notaParticipante.PresencaDia1,
+						notaParticipante.PresencaDia2,
 		});
 
 		return join.Select(j => new ParticipanteDados {
@@ -68,6 +74,10 @@ public class ParticipanteQueries : AbstractQueryClass {
 				NotaComp4 = j.NotaComp4,
 				NotaComp5 = j.NotaComp5,
 				NotaRedacao = j.NotaRedacao,
+				NotaGeral = (j.NotaCH + j.NotaLC + j.NotaRedacao
+						+ j.NotaCN + j.NotaMT) / 5,
+				PresencaDia1 = j.PresencaDia1,
+				PresencaDia2 = j.PresencaDia2,
 		});
 	}
 }
