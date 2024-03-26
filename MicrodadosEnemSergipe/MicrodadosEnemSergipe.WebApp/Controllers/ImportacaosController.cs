@@ -10,9 +10,9 @@ public class ImportacaosController : Controller
 {
     private readonly IStrategy _strategy;
 
-    private readonly ContextConnection _context;
+    private readonly SingletonContextManager _context;
 
-    public ImportacaosController(IStrategy strategy, ContextConnection context)
+    public ImportacaosController(IStrategy strategy, SingletonContextManager context)
     {
         this._strategy = strategy;
 
@@ -21,7 +21,9 @@ public class ImportacaosController : Controller
 
     public IActionResult ExibicaoTabela()
     {
-        var dados = _context.importacao
+        var dbContext = _context.GetContext();
+
+        var dados = dbContext.importacao
            .Where(m => m.CodigoUF == 28) // Filtra apenas pelo código UF 28
            .GroupBy(m => m.NomeMunicipio) // Agrupa por município
            .Select(g => g.ToList()) // Converte cada grupo em uma lista
@@ -30,6 +32,11 @@ public class ImportacaosController : Controller
         var resultado = dados.Select(d => _strategy.CalcularDadosGerais(d));
 
         return View(resultado);
+    }
+
+    public IActionResult Graficos()
+    {
+        return View();
     }
 
 
