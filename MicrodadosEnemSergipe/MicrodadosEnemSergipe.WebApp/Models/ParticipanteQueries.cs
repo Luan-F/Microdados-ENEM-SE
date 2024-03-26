@@ -6,6 +6,7 @@ public class ParticipanteQueries : AbstractQueryClass {
 		participantes = context.participante.AsQueryable();
 		redacoes = context.redacao.AsQueryable();
 		escolaridades = context.escolaridade.AsQueryable();
+		participanteDados = ExecuteJoin();
 	}
 
 	public IQueryable<ParticipanteDados> ExecuteJoin()
