@@ -1,6 +1,6 @@
 ﻿using Temporario;
 
-public class MediaSimplesDadosGeraisStrategy : IDadosGeraisStrategy
+public class MediaSimplesstrategy : IStrategy
 {
     public DadosGeraisViewModel CalcularDadosGerais(IEnumerable<Importacao> dados)
     {
@@ -17,7 +17,8 @@ public class MediaSimplesDadosGeraisStrategy : IDadosGeraisStrategy
             MediaNotaComp3 = (decimal)dados.Average(m => m.NotaComp3),
             MediaNotaComp4 = (decimal)dados.Average(m => m.NotaComp4),
             MediaNotaComp5 = (decimal)dados.Average(m => m.NotaComp5),
-            MediaPresenca = (decimal)(dados.Average(m => ((bool)m.PresencaCN ? 1 : 0) + ((bool)m.PresencaCH ? 1 : 0) + ((bool)m.PresencaMT ? 1 : 0) + ((bool)m.PresencaLC ? 1 : 0)) / 4),
+            MediaPresenca = (decimal)(dados.Average(m => ((bool)m.PresencaCN ? 1 : 0) + ((bool)m.PresencaCH ? 1 : 0) + 
+            ((bool)m.PresencaMT ? 1 : 0) + ((bool)m.PresencaLC ? 1 : 0)) / 4),
             MediaNotaRedacao = (decimal)dados.Average(m => m.NotaRedacao)
         };
     }

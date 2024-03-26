@@ -1,6 +1,6 @@
 using Temporario;
 
-public interface IDadosGeraisStrategy
+public interface IStrategy
 {
     DadosGeraisViewModel CalcularDadosGerais(IEnumerable<Importacao> dados);
 }

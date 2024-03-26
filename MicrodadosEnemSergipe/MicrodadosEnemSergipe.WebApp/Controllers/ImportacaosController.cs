@@ -8,13 +8,15 @@ using System.Linq;
 
 public class ImportacaosController : Controller
 {
-    private readonly IDadosGeraisStrategy _dadosGeraisStrategy;
+    private readonly IStrategy _strategy;
+
     private readonly ContextConnection _context;
 
-    public ImportacaosController(IDadosGeraisStrategy dadosGeraisStrategy, ContextConnection context)
+    public ImportacaosController(IStrategy strategy, ContextConnection context)
     {
-        _dadosGeraisStrategy = dadosGeraisStrategy;
-        _context = context;
+        this._strategy = strategy;
+
+        this._context = context;
     }
 
     public IActionResult ExibicaoTabela()
@@ -25,7 +27,7 @@ public class ImportacaosController : Controller
            .Select(g => g.ToList()) // Converte cada grupo em uma lista
            .ToList(); // Converte para uma lista
 
-        var resultado = dados.Select(d => _dadosGeraisStrategy.CalcularDadosGerais(d));
+        var resultado = dados.Select(d => _strategy.CalcularDadosGerais(d));
 
         return View(resultado);
     }
