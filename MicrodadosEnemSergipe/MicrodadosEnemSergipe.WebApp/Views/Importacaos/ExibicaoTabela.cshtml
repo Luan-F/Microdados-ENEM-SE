@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DadosGeraisViewModel>
+﻿@model IEnumerable<MediaMunicipio>
 <style>
     /* Definições gerais */
     body {
@@ -56,6 +56,8 @@
                     <th class="py-3 px-6 text-left">Média Nota Comp4</th>
                     <th class="py-3 px-6 text-left">Média Nota Comp5</th>
                     <th class="py-3 px-6 text-left">Média Nota Redação</th>
+                    <th class="py-3 px-6 text-left">Média Presenca Dia 1</th>
+                    <th class="py-3 px-6 text-left">Média Presenca Dia 2</th>
                 </tr>
             </thead>
             <tbody class="text-gray-600 text-sm font-light">
@@ -63,17 +65,19 @@
                 {
                     <tr class="border-b border-gray-200 hover:bg-gray-100">
                         <td class="py-3 px-6 text-left whitespace-nowrap">@item.NomeMunicipio</td>
-                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.MediaNotaCN</td>
-                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.MediaNotaCH</td>
-                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.MediaNotaLC</td>
-                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.MediaNotaMT</td>
-                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.NotaTotal</td>
-                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.MediaNotaComp1</td>
-                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.MediaNotaComp2</td>
-                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.MediaNotaComp3</td>
-                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.MediaNotaComp4</td>
-                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.MediaNotaComp5</td>
-                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.MediaNotaRedacao</td>
+                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.NotaCN</td>
+                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.NotaCH</td>
+                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.NotaLC</td>
+                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.NotaMT</td>
+                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.NotaGeral</td>
+                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.NotaComp1</td>
+                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.NotaComp2</td>
+                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.NotaComp3</td>
+                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.NotaComp4</td>
+                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.NotaComp5</td>
+                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.NotaRedacao</td>
+                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.PresencaDia1</td>
+                        <td class="py-3 px-6 text-left whitespace-nowrap">@item.PresencaDia2</td>
                     </tr>
                 }
             </tbody>
