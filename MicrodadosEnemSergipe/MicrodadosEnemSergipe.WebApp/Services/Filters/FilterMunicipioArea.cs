@@ -44,6 +44,13 @@ public class FilterMunicipioArea : BaseFilter {
 						&& p.NotaLC <= rangeLC[1]);
 		}
 
+		if (rangeGeral != null) {
+			query.mediaMunicipios = query
+				.mediaMunicipios.Where(
+						p => p.NotaGeral >= rangeGeral[0]
+						&& p.NotaGeral <= rangeGeral[1]);
+		}
+
 		if (next == null) {
 			return query;
 		}
