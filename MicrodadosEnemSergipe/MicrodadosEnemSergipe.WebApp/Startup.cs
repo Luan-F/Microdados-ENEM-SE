@@ -25,6 +25,8 @@ namespace testando
         {
             services.AddControllersWithViews();
 
+            services.AddScoped<IDadosGeraisStrategy, MediaSimplesDadosGeraisStrategy>();
+
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>
                 {
