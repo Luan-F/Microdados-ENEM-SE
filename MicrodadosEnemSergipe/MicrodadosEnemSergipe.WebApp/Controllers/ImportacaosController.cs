@@ -19,13 +19,19 @@ public class ImportacaosController : Controller
 
     public IActionResult ExibicaoTabela()
     {
-        var dados = _context.importacao
-           .Where(m => m.CodigoUF == 28) // Filtra apenas pelo código UF 28
-           .GroupBy(m => m.NomeMunicipio) // Agrupa por município
-           .Select(g => g.ToList()) // Converte cada grupo em uma lista
-           .ToList(); // Converte para uma lista
+       AbstractQueryClass abstractQuery = new MunicipioQueries(_context);
+       var query = new MunicipioQueries(_context);
+       query.CopyFromAbstract(abstractQuery);
+       var dados = query.ExecuteJoin()
+	       .ToList();
 
-        var resultado = dados.Select(d => _dadosGeraisStrategy.CalcularDadosGerais(d));
+       //  var dados = _context.importacao
+       //     .Where(m => m.CodigoUF == 28) // Filtra apenas pelo código UF 28
+       //     .GroupBy(m => m.NomeMunicipio) // Agrupa por município
+       //     .Select(g => g.ToList()) // Converte cada grupo em uma lista
+       //     .ToList(); // Converte para uma lista
+
+        var resultado = dados;// d => _dadosGeraisStrategy.CalcularDadosGerais(d));
 
         return View(resultado);
     }
