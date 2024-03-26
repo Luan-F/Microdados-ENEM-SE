@@ -12,5 +12,6 @@
         public decimal MediaNotaComp3 { get; set; }
         public decimal MediaNotaComp4 { get; set; }
         public decimal MediaNotaComp5 { get; set; }
+        public decimal MediaPresenca { get; set; }
         public decimal MediaNotaRedacao { get; set; }
     }
