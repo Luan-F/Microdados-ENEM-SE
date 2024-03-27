@@ -20,3 +20,120 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.loginBody {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+    .input-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+
+.importDados {
+    width: 50%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.importDados h2 {
+    text-align: center;
+    color: #333;
+}
+
+.importDados form {
+    margin-top: 20px;
+}
+
+    .importDados .file-input {
+        margin-bottom: 20px;
+    }
+
+.importDados input[type="file"] {
+    display: none;
+}
+
+    .importDados label {
+        display: block;
+        padding: 10px 15px;
+        background-color: #8a8d8f;
+        color: #fff;
+        text-align: center;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+.importDados button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background-color: seagreen;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    .importDados button:hover {
+        background-color: #57c186;
+    }
+
+.importDados button:active {
+    background-color: #004080;
+}

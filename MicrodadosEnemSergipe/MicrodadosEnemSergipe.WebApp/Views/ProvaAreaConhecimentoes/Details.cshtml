@@ -1,0 +1,144 @@
+﻿@model ProvaAreaConhecimento
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ProvaAreaConhecimento</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PresencaCN)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PresencaCN)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PresencaCH)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PresencaCH)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PresencaLC)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PresencaLC)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PresencaMT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PresencaMT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodTipoProvaCN)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodTipoProvaCN)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodTipoProvaCH)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodTipoProvaCH)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodTipoProvaLC)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodTipoProvaLC)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodTipoProvaMT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodTipoProvaMT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NotaCN)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NotaCN)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NotaCH)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NotaCH)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NotaLC)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NotaLC)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NotaMT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NotaMT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VetRespCN)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VetRespCN)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VetRespCH)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VetRespCH)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VetRespLC)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VetRespLC)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VetRespMT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VetRespMT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VetGabCN)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VetGabCN)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VetGabCH)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VetGabCH)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VetGabLC)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VetGabLC)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VetGabMT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VetGabMT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LinguaEstrangeira)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LinguaEstrangeira)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.NumeroInscricao">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,60 @@
+﻿@model Redacao
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Redacao</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StatusRedacao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StatusRedacao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NotaComp1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NotaComp1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NotaComp2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NotaComp2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NotaComp3)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NotaComp3)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NotaComp4)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NotaComp4)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NotaComp5)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NotaComp5)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NotaRedacao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NotaRedacao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.NumeroInscricao">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

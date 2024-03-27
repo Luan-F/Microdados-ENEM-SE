@@ -1,0 +1,107 @@
+﻿@model IEnumerable<Escolaridade>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroInscricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SituacaoConclusao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnoConclusao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoEscola)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoEnsino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoEscola)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeMunicipio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoMunicipio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoUF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SiglaUF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DependenciaAdministrativa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZonaLocalizacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SitucaoFuncionamento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.NumeroInscricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SituacaoConclusao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnoConclusao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoEscola)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoEnsino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoEscola)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeMunicipio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoMunicipio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoUF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SiglaUF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DependenciaAdministrativa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZonaLocalizacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SitucaoFuncionamento)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NumeroInscricao">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.NumeroInscricao">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.NumeroInscricao">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

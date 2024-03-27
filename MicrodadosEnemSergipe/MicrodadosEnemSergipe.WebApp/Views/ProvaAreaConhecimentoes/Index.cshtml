@@ -1,0 +1,164 @@
+﻿@model IEnumerable<ProvaAreaConhecimento>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroInscricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PresencaCH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PresencaCN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PresencaCH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PresencaLC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PresencaMT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodTipoProvaCN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodTipoProvaCH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodTipoProvaLC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodTipoProvaMT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NotaCN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NotaCH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NotaLC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NotaMT)
+            </th>
+           @*  <th>
+                @Html.DisplayNameFor(model => model.VetRespCN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VetRespCH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VetRespLC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VetRespMT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VetGabCN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VetGabCH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VetGabLC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VetGabMT) *@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LinguaEstrangeira)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroInscricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PresencaCN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PresencaCH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PresencaLC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PresencaMT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodTipoProvaCN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodTipoProvaCH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodTipoProvaLC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodTipoProvaMT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaCN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaCH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaLC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaMT)
+            </td>
+          @*   <td>
+                @Html.DisplayFor(modelItem => item.VetRespCN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VetRespCH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VetRespLC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VetRespMT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VetGabCN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VetGabCH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VetGabLC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VetGabMT)
+            </td> *@
+            <td>
+                @Html.DisplayFor(modelItem => item.LinguaEstrangeira)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NumeroInscricao">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.NumeroInscricao">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.NumeroInscricao">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
