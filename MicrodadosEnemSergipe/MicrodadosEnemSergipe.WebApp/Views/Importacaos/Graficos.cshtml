@@ -1,0 +1,213 @@
+﻿<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="row">
+    <div class="col-12">
+        <button class="botao-grafico" data-target="GraficosDeArea">Exibir Gráficos de Área</button>
+        <button class="botao-grafico" data-target="GraficosDeRedacaoPresenca">Exibir Gráfico de Média de Nota de Redação</button>
+    </div>
+</div>
+<div class="row" id="GraficosDeArea" style="display: none;">
+    <h4>Graficos de notas de Ciencias da Natureza, Matematica, Ciências Humanas e Linguagens</h4>
+    <div class="col-6">
+        <canvas id="graficoNotasCH" width="400" height="200"></canvas>
+    </div>
+    <div class="col-6">
+        <canvas id="graficoNotasLC" width="400" height="200"></canvas>
+    </div>
+    <div class="col-6">
+        <canvas id="graficoNotasMT" width="400" height="200"></canvas>
+    </div>
+    <div class="col-6">
+        <canvas id="graficoNotasCN" width="400" height="200"></canvas>
+    </div>
+  
+</div>
+<div class="row" id="GraficosDeRedacaoPresenca" style="display: none;">
+    <h4>Grafico com notas de redação e Presença</h4>
+    <div class="col-12">
+        <canvas id="graficoNotaRedacao" width="400" height="200"></canvas>
+    </div>
+    <div class="col-12">
+        <canvas id="graficoPresenca" width="800" height="400"></canvas>
+    </div>
+</div>
+<script>
+    // Captura todos os botões
+    const botoesGrafico = document.querySelectorAll('.botao-grafico');
+
+    // Adiciona evento de clique a cada botão
+    botoesGrafico.forEach(botao => {
+        botao.addEventListener('click', () => {
+            // Oculta todos os elementos com id que começa com "GraficosDe"
+            document.querySelectorAll('[id^="GraficosDe"]').forEach(elemento => {
+                elemento.style.display = 'none';
+            });
+
+            // Obtém o id do alvo do botão clicado
+            const alvo = botao.getAttribute('data-target');
+
+            // Exibe o elemento alvo
+            document.getElementById(alvo).style.display = 'block';
+        });
+    });
+</script>
+<script>
+    var ctxNotaRedacao = document.getElementById('graficoNotaRedacao').getContext('2d');
+    var mediasNotaRedacao = @Html.Raw(Json.Serialize(Model.MediasNotaRedacao));
+    var graficoNotaRedacao = new Chart(ctxNotaRedacao, {
+        type: 'bar',
+        data: {
+            labels: @Html.Raw(Json.Serialize(Model.Municipios)),
+            datasets: [{
+                label: 'Média de Nota de Redação',
+                data: mediasNotaRedacao,
+                backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                borderColor: 'rgba(255, 159, 64, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                x: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+<script>
+    var ctxNotasCH = document.getElementById('graficoNotasCH').getContext('2d');
+    var ctxNotasLC = document.getElementById('graficoNotasLC').getContext('2d');
+    var ctxNotasMT = document.getElementById('graficoNotasMT').getContext('2d');
+    var ctxNotasCN = document.getElementById('graficoNotasCN').getContext('2d');
+    var ctxPresenca = document.getElementById('graficoPresenca').getContext('2d');
+
+    var municipios = @Html.Raw(Json.Serialize(Model.Municipios));
+    var mediasNotaCH = @Html.Raw(Json.Serialize(Model.MediasNotaCH));
+    var mediasNotaLC = @Html.Raw(Json.Serialize(Model.MediasNotaLC));
+    var mediasNotaMT = @Html.Raw(Json.Serialize(Model.MediasNotaMT));
+    var mediasNotaCN = @Html.Raw(Json.Serialize(Model.MediasNotaCN));
+    var mediasPresenca = @Html.Raw(Json.Serialize(Model.MediasPresenca));
+
+    var graficoNotasCH = new Chart(ctxNotasCH, {
+        type: 'bar',
+        data: {
+            labels: municipios,
+            datasets: [{
+                label: 'Média de Notas de Ciências Humanas',
+                data: mediasNotaCH,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    var graficoNotasLC = new Chart(ctxNotasLC, {
+        type: 'bar',
+        data: {
+            labels: municipios,
+            datasets: [{
+                label: 'Média de Notas de Linguagens',
+                data: mediasNotaLC,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    var graficoNotasMT = new Chart(ctxNotasMT, {
+        type: 'bar',
+        data: {
+            labels: municipios,
+            datasets: [{
+                label: 'Média de Notas de Matematica',
+                data: mediasNotaMT,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    var graficoNotasCN = new Chart(ctxNotasCN, {
+        type: 'bar',
+        data: {
+            labels: municipios,
+            datasets: [{
+                label: 'Média de Notas de Ciencia da Natureza',
+                data: mediasNotaMT,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    var graficoPresenca = new Chart(ctxPresenca, {
+        type: 'bar',
+        data: {
+            labels: municipios,
+            datasets: [{
+                label: 'Média de Presença',
+                data: mediasPresenca,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                r: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+
+</script>
