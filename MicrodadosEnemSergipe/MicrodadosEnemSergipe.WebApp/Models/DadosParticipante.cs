@@ -14,4 +14,9 @@ public class ParticipanteDados {
 	public float? NotaComp5 { get; set; }
 
 	public float? NotaRedacao { get; set; }
+
+	public float? NotaGeral { get; set; }
+
+	public bool PresencaDia1 { get; set; }
+	public bool PresencaDia2 { get; set; }
 }

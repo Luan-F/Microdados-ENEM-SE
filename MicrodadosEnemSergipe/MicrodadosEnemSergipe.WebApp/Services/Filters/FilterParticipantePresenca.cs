@@ -16,11 +16,11 @@ public class FilterParticipantePresenca : BaseFilter {
 
 	public override AbstractQueryClass Filter(AbstractQueryClass query)
 	{
-		if (query.provasAreaConhecimento == null) {
+		if (query.participanteDados == null) {
 			throw new Exception("Campo provaAreaConhecimento é nulo");
 		}
 
-		query.provasAreaConhecimento = query.provasAreaConhecimento.Where(checkDia());
+		query.participanteDados = query.participanteDados.Where(checkDia());
 
 		if (next == null) {
 			return query;
@@ -29,8 +29,8 @@ public class FilterParticipantePresenca : BaseFilter {
 		return next.Filter(query);
 	}
 
-	System.Linq.Expressions.Expression<Func<ProvaAreaConhecimento, bool>> checkDia() {
-		if (dia == 1) return prova => (prova.PresencaCH && prova.PresencaLC) == presente;
-		return prova => (prova.PresencaCN && prova.PresencaMT) == presente;
+	System.Linq.Expressions.Expression<Func<ParticipanteDados, bool>> checkDia() {
+		if (dia == 1) return participante => participante.PresencaDia1 == presente;
+		return participante => participante.PresencaDia2 == presente;
 	}
 }

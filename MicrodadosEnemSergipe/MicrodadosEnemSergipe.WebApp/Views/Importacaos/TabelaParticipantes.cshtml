@@ -1,0 +1,135 @@
+@using MicrodadosEnemSergipe.WebApp.Helpers
+@* @model IEnumerable<ParticipanteDados>  *@
+@model PaginatedList<ParticipanteDados>
+
+@{
+    ViewData["Title"] = "Dados dos participantes";
+}
+
+<center><h1>Dados dos participantes</h1></center>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th rowspan="2">
+                Município
+            </th>
+            <th rowspan="2">
+                Nota CH
+            </th>
+            <th rowspan="2">
+                Nota LC
+            </th>
+            <th rowspan="2">
+                Nota CN
+            </th>
+            <th rowspan="2">
+                Nota MT
+            </th>
+            <th colspan="6">
+                Redação
+            </th>
+            <th rowspan="2">
+                Nota Geral
+            </th>
+            <th colspan="2">
+		    Presença
+	    </th>
+        </tr>
+	<tr>
+		<th scope="col">
+			Comp. 1
+		</th>
+		<th scope="col">
+			Comp. 2
+		</th>
+		<th scope="col">
+			Comp. 3
+		</th>
+		<th scope="col">
+			Comp. 4
+		</th>
+		<th scope="col">
+			Comp. 5
+		</th>
+		<th scope="col">
+			Total
+		</th>
+		<th rowspan="2">
+			Dia 1
+		</th>
+		<th rowspan="2">
+			Dia 2
+		</th>
+	</tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeMunicipio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaCH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaLC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaCN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaMT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaComp1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaComp2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaComp3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaComp4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaComp5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaRedacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaGeral)
+            </td>
+            <td>
+	    	@if (item.PresencaDia1) { @Html.Raw("Sim")} else { @Html.Raw("Não") }
+            </td>
+            <td>
+	    	@if (item.PresencaDia2) { @Html.Raw("Sim")} else { @Html.Raw("Não") }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<nav>
+    <ul class="pagination">
+        @if (Model.HasPreviousPage)
+        {
+            <li class="page-item">
+                <a class="page-link" href="?page=@(Model.PageIndex - 1)">Anterior</a>
+            </li>
+        }
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                <a class="page-link" href="?page=@i">@i</a>
+            </li>
+        }
+        @if (Model.HasNextPage)
+        {
+            <li class="page-item">
+                <a class="page-link" href="?page=@(Model.PageIndex + 1)">Próximo</a>
+            </li>
+        }
+    </ul>
+</nav>

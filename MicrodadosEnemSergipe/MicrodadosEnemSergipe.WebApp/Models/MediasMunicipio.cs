@@ -16,4 +16,6 @@ public class MediaMunicipio
 
 	public float? PresencaDia1 { get; set; }
 	public float? PresencaDia2 { get; set; }
+
+	public float? NotaGeral { get; set; }
 }

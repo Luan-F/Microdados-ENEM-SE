@@ -4,6 +4,7 @@ public abstract class AbstractQueryClass {
 	public IQueryable<Escolaridade>? escolaridades;
 	public IQueryable<Participante>? participantes;
 	public IQueryable<MediaMunicipio>? mediaMunicipios;
+	public IQueryable<ParticipanteDados>? participanteDados;
 
 	public void CopyFromAbstract(AbstractQueryClass queryClass)
 	{
@@ -12,6 +13,7 @@ public abstract class AbstractQueryClass {
 		this.escolaridades = queryClass.escolaridades;
 		this.participantes = queryClass.participantes;
 		this.mediaMunicipios = queryClass.mediaMunicipios;
+		this.participanteDados = queryClass.participanteDados;
 	}
 
 	public bool IsRedacoesNull()
